@@ -1,1 +1,75 @@
-<p>pokemon-favorites-form works!</p>
+<div class="header bg-gradient-danger pb-4 pt-5 pt-md-6">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <button class="btn btn-light" routerLink="../"><i class="fa fa-arrow-left"></i> Favorites</button>
+
+            <div class="card p-4 mt-2" *ngIf="pokemon">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="d-inline">
+                                <!-- #{{item.id}} -->
+                                {{pokemon.name}}
+                            </h4>
+                            <i class="fa fa-star fa-2x float-right text-yellow"> </i>
+                        </div>
+                        <div class="col-12">
+                            <span>
+                                <i class="fa fa-calendar text-muted small"></i> Created at: {{pokemon.createdAt | date :
+                                "short"}}
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <img class="card-img-top mt-2" style="height: 120px;" [src]="pokemon.imageUrl">
+
+
+                <hr>
+
+                <form class="form-row mt-4" [formGroup]="Formulario" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group col-md-4">
+                        <label for="alias"> Alias</label>
+                        <input formControlName="alias" type="text" alias="alias" id="alias"
+                            [ngClass]="{'is-invalid' : submitted && f.alias.errors,  'form-control':true  }">
+                        <div class="invalid-feedback" *ngIf="submitted && f.alias.errors">
+                            <div *ngIf="f.alias.errors.required">El campo es obligatorio</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-right col-md-12">
+                        <hr />
+
+                        <button class="btn btn-light m-1" routerLink="../" type="button">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+
+                        <button class="btn btn-info m-1" type="submit">
+                            <i class="fas fa-check"></i> Save
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

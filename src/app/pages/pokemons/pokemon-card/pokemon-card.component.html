@@ -21,10 +21,10 @@
     </ng-template>
 
     <div class="card-body text-center">
-        <!-- <h5 class="card-title">Card title</h5> -->
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                the card's content.</p> -->
-        <button (click)="onBtnFavorite()" class="btn btn-primary btn-block">
+        <button (click)="onBtnFavorite()" class="btn btn-block" [ngClass]="{
+            'btn-primary': !pokemon.isFavorite,
+            'btn-outline-danger': pokemon.isFavorite
+    }">
             <span *ngIf="!pokemon.isFavorite">Add</span>
             <span *ngIf="pokemon.isFavorite">Remove</span>
         </button>

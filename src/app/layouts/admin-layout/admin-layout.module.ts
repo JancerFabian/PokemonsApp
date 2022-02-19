@@ -21,6 +21,7 @@ import { FavoritePokemonCardComponent } from 'src/app/pages/favorite-pokemons/fa
     FormsModule,
     HttpClientModule,
     NgbModule,
+    ReactiveFormsModule,
     ClipboardModule
   ],
   declarations: [

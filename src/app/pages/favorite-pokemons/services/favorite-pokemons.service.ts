@@ -15,7 +15,7 @@ export class FavoritePokemonsService {
   addToFavorites(pokemon: Pokemon): void {
 
     let favorite: PokemonFavorite = {
-      name: pokemon.name, 
+      name: pokemon.name,
       imageUrl: pokemon.imageUrl,
       alias: "",
       createdAt: new Date()
@@ -51,5 +51,10 @@ export class FavoritePokemonsService {
 
     this.saveChanges()
   }
+
+  getOne(name: string): PokemonFavorite {
+    return this.favorites.find(p => p.name === name)
+  }
+
 
 }

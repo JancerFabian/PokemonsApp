@@ -22,7 +22,6 @@ export class FavoritePokemonsComponent implements OnInit {
   getPokemons() {
 
     this.pokemons = this.favServ.getFavorites();
-
     // this.pokeService.getPokemons(this.limit, this.offset).subscribe(r => {
     //   this.pokemons = r.results;
     //   this.btnNextEnabled = r.next ? true : false;
@@ -34,10 +33,15 @@ export class FavoritePokemonsComponent implements OnInit {
 
   }
 
-  onDeleteFavorite(event: string) {
+  onDeleteFavorite(name: string) {
     console.log(`Pokemon ${event} ha sido eliminado de favoritos`)
     this.getPokemons();
   }
+
+
+  onEdit(name: string) { }
+
+  openEditModal() { }
 
 
 }

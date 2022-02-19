@@ -14,7 +14,6 @@ export class FavoritePokemonCardComponent implements OnInit {
 
   @Input() pokemon: PokemonFavorite;
   @Output() deleted: EventEmitter<string> = new EventEmitter<string>();
-  @Output() onEdit: EventEmitter<string> = new EventEmitter<string>();
 
 
   constructor(private favSer: FavoritePokemonsService) { }
@@ -29,10 +28,6 @@ export class FavoritePokemonCardComponent implements OnInit {
 
   onImageError() {
     this.showDefaultImage = true;
-  }
-  
-  onBtnEdit() {
-    this.onEdit.emit(this.pokemon.name)
   }
 
 }
