@@ -1,0 +1,32 @@
+<div class="card pt-3">
+
+    <div class="card-header">
+        <h4 class="d-inline">
+            <!-- #{{item.id}} -->
+            {{pokemon.name}}
+        </h4>
+        <i class="fa fa-star fa-2x float-right" [ngClass]="{
+            'text-light': !pokemon.isFavorite,
+            'text-yellow': pokemon.isFavorite
+        }">
+        </i>
+    </div>
+
+    <ng-container *ngIf="!showDefaultImage; then image; else noImage"></ng-container>
+    <ng-template #image>
+        <img class="card-img-top mt-2" style="height: 120px;" [src]="pokemon.imageUrl" (error)="onImageError()">
+    </ng-template>
+    <ng-template #noImage>
+        <img class="card-img-top mt-2" style="height: 120px;" [src]="defaultImageURL">
+    </ng-template>
+
+    <div class="card-body text-center">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                the card's content.</p> -->
+        <button (click)="onBtnFavorite()" class="btn btn-primary btn-block">
+            <span *ngIf="!pokemon.isFavorite">Add</span>
+            <span *ngIf="pokemon.isFavorite">Remove</span>
+        </button>
+    </div>
+</div>

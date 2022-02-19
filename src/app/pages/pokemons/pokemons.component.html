@@ -1,0 +1,44 @@
+<div class="header bg-gradient-danger pb-4 pt-5 pt-md-6">
+    <div class="container-fluid">
+        <div class="header-body">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mt-4">
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <button class="btn btn-light" (click)="onBtnPreviusClic()" [disabled]="!btnPrevEnabled">
+                <i class=" fa fa-arrow-left fa-2x"></i>
+            </button>
+            <button class="btn btn-light" (click)="onBtnNextClic()" [disabled]="!btnNextEnabled">
+                <i class=" fa fa-arrow-right fa-2x"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12 col-sm-6 col-lg-3 my-2" *ngFor="let item of pokemons;">
+            <app-pokemon-card [pokemon]="item"></app-pokemon-card>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <button class="btn btn-light" (click)="onBtnPreviusClic()" [disabled]="!btnPrevEnabled">
+                <i class=" fa fa-arrow-left fa-2x"></i>
+            </button>
+            <button class="btn btn-light" (click)="onBtnNextClic()" [disabled]="!btnNextEnabled">
+                <i class=" fa fa-arrow-right fa-2x"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+
+</div>
