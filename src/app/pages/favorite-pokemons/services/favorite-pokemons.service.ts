@@ -16,7 +16,7 @@ export class FavoritePokemonsService {
 
     let favorite: PokemonFavorite = {
       name: pokemon.name, 
-      image: pokemon.imageUrl,
+      imageUrl: pokemon.imageUrl,
       alias: "",
       createdAt: new Date()
     }

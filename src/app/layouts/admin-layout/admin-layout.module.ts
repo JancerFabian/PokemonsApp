@@ -11,6 +11,7 @@ import { FavoritePokemonsComponent } from 'src/app/pages/favorite-pokemons/favor
 import { PokemonFavoritesFormComponent } from 'src/app/pages/favorite-pokemons/pokemon-favorites-form/pokemon-favorites-form.component';
 import { PokemonCardComponent } from 'src/app/pages/pokemons/pokemon-card/pokemon-card.component';
 import { PokemonsComponent } from 'src/app/pages/pokemons/pokemons.component';
+import { FavoritePokemonCardComponent } from 'src/app/pages/favorite-pokemons/favorite-pokemon-card/favorite-pokemon-card.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PokemonsComponent } from 'src/app/pages/pokemons/pokemons.component';
     PokemonsComponent,
     FavoritePokemonsComponent,
     PokemonCardComponent,
-    PokemonFavoritesFormComponent
+    PokemonFavoritesFormComponent,
+    FavoritePokemonCardComponent
   ]
 })
 
